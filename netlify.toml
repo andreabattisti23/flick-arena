@@ -1,0 +1,14 @@
+# Flick Arena: sito statico gia' compilato, nessuna build da eseguire.
+[build]
+  publish = "."
+
+# Il gioco usa l'hash (#/menu): non servono reindirizzamenti.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
